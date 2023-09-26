@@ -1,5 +1,5 @@
 {% set name = "ipyfastscape" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3ab712ff815487234d487df5f9082adeb7650fa43a5715fe53325fb8380d44d1
+  sha256: b5d5c18b18a4495a2fcac2f36a2048a955a99f0f51539cb439605a128df77974
 
 build:
   noarch: python
@@ -16,11 +16,12 @@ build:
 
 requirements:
   host:
-    - python >=3.6
+    - python >=3
+    - setuptools >=42
+    - setuptools-scm >=7
     - pip
-    - setuptools_scm
   run:
-    - python >=3.6
+    - python >=3
     - ipywidgets >=7.5.0
     - ipygany >=0.5.0
     - ipython
